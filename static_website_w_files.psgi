@@ -3,7 +3,8 @@ use strict;
 use warnings;
 
 # Serve static files from document root with a directory index
-# app.psgi
+# static_website.psgi
+#To run this just console: plackup this_file.psgi
 
 use Plack::App::Directory;
 my $app = Plack::App::Directory->new({ 

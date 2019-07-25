@@ -4,7 +4,6 @@ use warnings;
 
 use Path::Tiny;
 
-
 my $dir = path('~/projects/nos/perl_learning');
 
 #iterate over the content of dir path 
