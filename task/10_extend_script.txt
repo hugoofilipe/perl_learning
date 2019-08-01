@@ -1,0 +1,11 @@
+
+# Perl Basics - Continuation
+
+    * Task
+        * change script to be able to also read a CSV File
+
+    * Objectives
+        * modulization of code
+
+    * Hints
+        * Text::CSV_XS

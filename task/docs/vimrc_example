@@ -1,0 +1,383 @@
+" 20070315 ripped stuff from the damian
+" 20070316 ripped stuff from nferraz (perlmongers)
+"           http://www.perlmonks.org/?node_id=540167
+" 20070318 ripped stuff from cog
+
+set nocompatible
+set ruler
+set autoindent
+set showmatch
+
+set incsearch "Lookahead as search pattern specified
+set ignorecase "Ignore case in all searches...
+set smartcase "...unless uppercase letters used
+set hlsearch "Highlight all search matches
+
+set tabstop=4 "Indentation levels every four columns
+set expandtab "Convert all tabs that are typed to spaces
+set shiftwidth=4 "Indent/outdent by four columns
+set shiftround "Indent/outdent to nearest tabstop
+
+syntax on
+"set   highlight=8r,db,es,hs,mb,Mr,nu,rs,sr,tb,vr,ws
+
+set   showcmd
+map Q gq
+
+"=====[ the damian Begin ]==================
+set comments-=s1:/*,mb:*,ex:*/ "Don't recognize C comments
+
+"set smartindent "Turn on autoindenting of blocks
+"try this line
+autocmd FileType perl set autoindent|set smartindent
+"But not magic outdenting of comments...
+inoremap # X<C-H>#
+" if you want to ignore indenting comments
+"inoremap # X^H#
+
+" Make BS/DEL work as expected
+vmap <BS> x
+
+set title "Show filename in titlebar of window
+
+set autowrite "Save buffer automatically when changing files
+
+set backspace=indent,eol,start "BS past autoindents, line boundaries,
+" and even the start of insertion
+
+set fileformats=unix,mac,dos "Handle Mac and DOS line-endings
+"but prefer Unix endings
+
+"insert ticks around word ... must NOT be on last char of word
+map tt ebi'<ESC>ea'<ESC>
+"if on last char, use this one...
+map ett bi'<ESC>ea'<ESC>
+map ta ebi"<ESC>ea"<ESC>
+""insert ticks around word ... must NOT be on first char of word
+"map tt bi'<ESC>ea'<ESC>
+""if on first char, use this one...
+"map ett ebi'<ESC>ea'<ESC>
+"map ta bi"<ESC>ea"<ESC>
+
+
+map ,, :set paste<CR>
+map ,. :set nopaste<CR>
+"quick syntax toggler
+map ,sp :set syntax=perl<CR>
+map ,sm :set syntax=mason<CR>
+map ,sh :set syntax=html<CR>
+
+nnoremap <silent> _t :%!perltidy -q<cr>
+vnoremap <silent> _t :!perltidy -q<cr>
+
+"clean up xml
+nnoremap <silent> _x :%!tidy -quiet -indent -xml -utf8 -w 120<cr>
+vnoremap <silent> _x :!tidy -quiet -indent -xml -utf8 -w 120<cr>
+
+" set copiler to perlcritic; make for current file; open error window
+nnoremap <silent>_pc :compiler perlcritic<cr>:make<cr>:cope<cr><cr>
+"
+" still testing:
+"nnoremap <silent>_pcc :set makeprg=perlcritic\ -verbose\ \"\\%f:\\%l:\\%c:\\%m\"\ %<cr>:set errorformat=%f:%l:%c:%m<cr>:make<cr>:cope<cr>
+                                                                                  "%m at line %l, near ’%r’.\n  %p (Severity: %s)\n%d\n
+" Insert common Perl code structures...
+" warn does not buffer
+"iab udd warn '------>' . __FILE__ . ' ' . Dumper();<ESC>hi
+iab subo sub {<CR>my $s = shift;<CR>my %a = @_;<CR><CR>return;<CR>}<ESC>5kwi
+iab dprint print STDERR sprintf("%s %s: %s\n", '<C-R>%','jcp', "" );<ESC>?""<CR>a
+iab dprintd print STDERR sprintf("%s %s: %s\n", '<C-R>%','jcp',Dumper() );<ESC>?()<CR>a
+
+"iab edebug $ENV{'DEBUG'} &&
+
+" template toolkit
+iab ttdump <ESC>o[% USE Dumper %]<CR><pre>[% Dumper.dump_html(detalhe) %]</pre><ESC>?detalhe<CR>cw
+
+" search for use strict;
+" Include logger package  
+" create a logger global object, jump back to where we were
+iab mklogj <ESC>/use strict<CR>jjouse Sonaecom::Logger;<CR>my $l = Sonaecom::Logger::get_logger();<CR><ESC>:sleep 2<ESC>''
+map mklogj <ESC>/use strict<CR>jjouse Sonaecom::Logger;<CR>my $l = Sonaecom::Logger::get_logger();<CR><ESC>:sleep 2<ESC>''
+
+iab mklog <ESC>ouse Sonaecom::Logger;<CR>my $l = Sonaecom::Logger::get_logger();<ESC>
+map mklog <ESC>ouse Sonaecom::Logger;<CR>my $l = Sonaecom::Logger::get_logger();<ESC>
+
+" make it simple to log stuff
+iab logds $l->debug( '' );<ESC>?'' <CR>a
+iab logd $l->debugf( '%s', );<ESC>?, <CR>a
+iab logdd $l->debugf( '%s', Dumper() );<ESC>?()<CR>a
+
+iab logw $l->warnf( '%s',  );<ESC>?, <CR>a
+iab logws $l->warn( '' );<ESC>?'' <CR>a
+iab logwd $l->warnf( '%s', Dumper() );<ESC>?()<CR>a
+
+iab logi $l->infof( '%s', );<ESC>?, <CR>a
+iab logis $l->info( '' );<ESC>?'' <CR>a
+iab logid $l->infof( '%s', Dumper() );<ESC>?()<CR>a
+
+iab loge $l->errorf( '%s', );<ESC>?, <CR>a
+iab loges $l->error( '' );<ESC>?'' <CR>a
+iab loged $l->errorf( '%s', Dumper() );<ESC>?()<CR>a
+
+iab logok $l->okf( '%s', );<ESC>?, <CR>a
+iab logoks $l->ok( '' );<ESC>?'' <CR>a
+iab logokd $l->okf( '%s', Dumper() );<ESC>?()<CR>a
+
+
+"iab ubm use Benchmark qw( cmpthese );<CR><CR>cmpthese -10, {<CR>};<ESC>O
+"iab usc use Smart::Comments;<CR>###
+"iab pnl print \n";<ESC>3hi
+"iab uts use Test::Simple 'no_plan';
+"iab utm use Test::More 'no_plan';
+"iab dbs $DB::single = 1;<ESC>
+"
+"
+
+iab heredoc my $heredoc = <<'END_HERE';<CR>END_HERE<ESC>:set paste<CR>O
+
+
+"=====[ Text formatting ]==================================
+
+" Format file with perltidy...
+map ;t 1G!Gperltidy<CR>
+
+"=====[ Run Perl programs from within vim ]========================
+
+" Execute Perl file...
+map W :!clear;perl -w %<CR>
+
+" Debug Perl file...
+"map Q :!perl -d %<CR>
+
+" Run perldoc...
+map ?? :!perldoc
+set keywordprg=perldoc
+
+
+"=====[ Highlight a common mistake ]==================================
+
+" Add new highlight combinations...
+highlight YELLOW_ON_BLACK ctermfg=yellow ctermbg=black
+highlight WHITE_ON_RED ctermfg=white ctermbg=red
+
+" Track "faux" references...
+function! BadRefs ()
+match WHITE_ON_RED /_ref[ ]*[[{(]\|_ref[ ]*-[^>]/
+endfunction
+call BadRefs()
+
+"=====[ Highlight spelling errors on request ]===================
+
+"set spelllang=pt
+"map <silent> ;s :setlocal invspell<CR>
+
+
+"=====[ the damian END ]==================
+
+
+"=====[ nferraz  Begin ]==================
+" check perl code with :make
+autocmd FileType perl set makeprg=perl\ -c\ %\ $*
+autocmd FileType perl set errorformat=%f:%l:%m
+autocmd FileType perl set autowrite
+
+" dont use Q for Ex mode
+"map Q :q
+
+"=====[ nferraz END ]==================
+
+"let perl_fold=1
+"let perl_fold_blocks=1
+
+" my perl includes pod
+let perl_include_pod = 1
+" syntax color complex things like @{${"foo"}}
+let perl_extended_vars = 1
+
+" reformat paragraph with no arguments:
+"map ** {!}par j<CR>
+map ** {!} perl -MText::Autoformat -e'autoformat({ all => 1 , justify => 'full' })' j<CR><CR>
+" set noautoindent
+"map ,, :set noautoindent <BAR> set nosmartindent<CR>
+" set autoindent
+"map ,. :set autoindent<BAR> set smartindent<CR>
+
+set nobackup
+"set   backupdir=./.backup,.,/home/jcp/tmp,/tmp
+set   directory=.,./.backup,/home/jcp/tmp,/tmp
+
+":nmap ,t mQG:?^-- $<CR>:nohl<CR>o<ESC>dG:r !~/bin/sigMaker.pl jcp ~/.signature \%<CR>`Q 
+
+"lets not allow F1 open help files! -> doesn't work :(
+map <F1> <Esc>
+imap <F1> <Esc>
+"rot13 of current file -> play stuff!
+map <F3> ggVGg?
+
+"must see vim7 spelling wich is better
+"map <F4> :w!<CR>:!aspell -d pt -c %<CR>:e! %<CR>
+"map <F5> :w!<CR>:!aspell -c %<CR>:e! %<CR>
+"
+"map <F6> :w!<CR>:!/usr/bin/gpg -u registrar --clearsign  --output $HOME/tmp/signed.txt %<CR>:e! $HOME/tmp/signed.txt <CR>
+"
+map <F7> :set hls!<bar>set hls?<CR>
+
+" Reload .vimrc (overrides previous options, but does not remove them)
+map <F8> :so $HOME/.vimrc<BAR>echo "Reloaded .vimrc"<CR>
+
+"map <F10> :call EscreveHtml()<BAR>echo "HTMLize complete"<CR>
+
+""next error
+"map <F9> :cnext<CR>
+""previous error
+"map <F10> :cprevious<CR>
+
+map <silent> iso :so $HOME/.vim/html_iso_8859_portugues.vim<BAR>echo "Loaded iso-8859_html"<CR>
+map <silent> utf8 :so $HOME/.vim/html_utf8_portugues.vim<BAR>echo "Loaded utf8_html" <CR>
+
+"load utf8 automatically
+so $HOME/.vim/html_utf8_portugues.vim
+"so $HOME/.vim/html_iso_8859_portugues.vim
+
+
+" Point to global tags file - set the 'twiki' environment
+" variable to point to the 'twiki' directory above bin, lib, etc.
+"set tags=.vim/twikiSyntax.vim
+
+"put comments in green
+colorscheme default
+hi Comment    guifg=#80a0ff ctermfg=darkgreen
+hi Search    term=reverse  ctermfg=white  ctermbg=LightGreen
+set hls
+
+"jcp " When editing a file, always jump to the last known cursor position.
+"jcp " Don't do it when the position is invalid or when inside an event handler
+"jcp " (happens when dropping a file on gvim).
+"jcp autocmd BufReadPost *
+"jcp \ if line("'\"") > 0 && line("'\"") <= line("$")|
+"jcp \ exe "normal g`\""|
+"jcp \ endif
+
+
+" pressing < or > will let you indent/unident selected lines
+vnoremap < <gv
+vnoremap > >gv
+
+" Indent/outdent current block...
+"map %% $>i}``
+"map $$ $<i}``
+
+" some common typos
+command! Qa qa
+command! Q  q
+command! W  w
+command! Wq wq
+command! WQ wq
+
+"jcp vim7?? set matchpairs+=<:>,«:»             "Match angle brackets too
+
+
+"=====[ Auto-setup for Perl scripts and modules ]=============
+
+augroup Perl_Setup
+au!
+au BufNewFile *.p[lm] 0r !$HOME/.vim/bin/file_template.pl <afile>
+au BufNewFile *.p[lm] 1/^[ \t]*[#].*implementation[ \t]\+here/
+augroup END
+
+augroup PerlTest_Setup
+au!
+au BufNewFile *.t 0r !$HOME/.vim/bin/file_template.pl <afile>
+au BufNewFile *.t 1/^[ \t]*[#].*implementation[ \t]\+here/
+augroup END
+
+augroup HTML_Setup
+au!
+au BufNewFile *.html 0r !$HOME/.vim/bin/file_template.pl <afile>
+au BufNewFile *.html 1/\n\n/
+augroup END
+
+"autocmd BufNewFile  *.pm        0r ~/.vim/skeleton.pm
+"autocmd BufNewFile  *.pl        0r ~/.vim/skeleton.pl
+
+
+"testing template toolkit
+"au BufNewFile,BufRead *.tt2 setf tt2
+"au BufNewFile,BufRead *.tt2
+"        \ if ( getline(1) . getline(2) . getline(3) =~ '<\chtml'
+"        \           && getline(1) . getline(2) . getline(3) !~ '<[%?]' )
+"        \   || getline(1) =~ '<!DOCTYPE HTML' |
+"        \   setf tt2html |
+"        \ else |
+"        \   setf tt2 |
+"        \ endif
+"so $HOME/.vim/tt2html.vim
+"so $HOME/.vim/tt2.vim
+
+"define START_TAG, END_TAG
+"    "ASP"
+"    :let b:tt2_syn_tags = '<% %>'
+"    "PHP"
+"    :let b:tt2_syn_tags = '<? ?>'
+"    "TT2 and HTML"
+"    :let b:tt2_syn_tags = '\[% %] <!-- -->' 
+"
+"
+"
+"
+""=====[ Manage tabs ]================================
+
+" Convert file to different tabspacings
+
+function! NewTabSpacing (newtabsize)
+let was_expanded = &expandtab
+normal TT
+execute "set ts=" . a:newtabsize
+execute "set sw=" . a:newtabsize
+execute "map F !Gformat -T" . a:newtabsize . " -"
+execute "map <silent> f !Gformat -T" . a:newtabsize . "<CR>"
+if was_expanded
+normal TS
+endif
+endfunction
+
+"map <silent> T! :call NewTabSpacing(1)<CR>
+map <silent> T" :call NewTabSpacing(2)<CR>
+map <silent> T# :call NewTabSpacing(3)<CR>
+map <silent> T$ :call NewTabSpacing(4)<CR>
+map <silent> T% :call NewTabSpacing(5)<CR>
+map <silent> T& :call NewTabSpacing(6)<CR>
+map <silent> T/ :call NewTabSpacing(7)<CR>
+map <silent> T( :call NewTabSpacing(8)<CR>
+map <silent> T) :call NewTabSpacing(9)<CR>
+
+" Convert to/from spaces/tabs...
+map <silent> TS :set expandtab<CR>:%retab!<CR>
+map <silent> TT :set noexpandtab<CR>:%retab!<CR>
+
+
+"jcp not like "=====[ Make Visual modes work better ]==================
+"jcp not like 
+"jcp not like " Visual Block mode is far more common that Visual mode...
+"jcp not like nnoremap v <C-V>
+"jcp not like nnoremap <C-V> v
+
+"Square up visual selections -> messes up visual selects
+"set virtualedit=block
+
+
+"=====[ Spelling support ]==================================
+
+" Correct common mistypings in-the-fly...
+iab retrun return
+iab pritn print
+iab complte complete
+iab teh the
+iab liek like
+iab maisl mails
+"iab liekwise likewise
+"iab Pelr Perl
+iab pelr perl
+"iab ;t 't
+"iab moer more
+"iab previosu previous
+

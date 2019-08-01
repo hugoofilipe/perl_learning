@@ -1,0 +1,13 @@
+
+
+# 5.0 - Create script
+
+    * Write a script that receives a filename as argument
+      ( file will have one word per line )
+        + Load file data into an array
+        + Print each line to STDOUT
+        + Use Sonaecom::Logger for error processing
+            ( PATH: /servers/libs/novis
+              DOC:  /servers/libs/novis/Sonaecom/Logger/examples
+            )
+

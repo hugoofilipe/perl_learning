@@ -1,0 +1,47 @@
+
+* Description
+
+    Create a automated test using Test::More
+
+    Use code/common.pl to connect to DB
+    Tests go into "code/t/"
+    Test file extention is ".t"
+    The test execution order is determined by the test file name
+    ex:
+        001_test_one.t
+        002_test_two.t
+        ...
+
+* Things to test/ use
+#   create a valid plan
+#       See Test::More 'tests' => NUMBER;
+#       and
+#       plan 'tests' => NUMBER;  # for dynamic tests
+#
+#   Do we have a valid connection object
+#   Do we have the correct number of rows in each table
+#
+#   Conditional block test with SKIP 
+#       Ex: if there is a delegate with the name "J. Jonah Jameson"
+#               there must never be another with the name "spiderman"
+#               (fail in this case)
+#          Run the test without this special delegate
+#           Insert him
+#          Run the test again
+#
+#   ...
+
+#
+# HINT: 
+
+    Documentation:
+
+        http://search.cpan.org/perldoc?Test::Tutorial
+        http://search.cpan.org/perldoc?Test::More
+        https://www.socialtext.net/perl5/index.cgi?testing
+
+        SEE code/t.examples
+            run using:
+
+                prove *.t
+

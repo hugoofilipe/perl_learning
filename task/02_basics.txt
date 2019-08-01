@@ -1,0 +1,56 @@
+
+
+# 1.0 - Real Basic Stuff
+#
+    * This script must run in perl 5.8
+
+    * Write a script that receives a variable number of arguments
+        + For all the arguments received:
+            If the argument is a number and odd
+                put it into an array called "odd"
+            If the argument is a number and even
+                put it into an array called "even"
+            If the argument has a sub-string 'nan' 
+                put it into an array called "banana_candidate"
+            otherwise, place the argument into and array called "other"
+
+        + Cycle all the arrays, use a hash to count the number of  times
+          a argument is given
+
+        + Print all the arrays and hash to STDOUT
+
+        + Print all the arrays and hash to a file named output.txt
+
+    * Knowledge used:
+        Script Basics
+        Variables
+            Scalar
+            Array
+            Hash
+        use strict;
+        use warnings;
+        use Data::Dumper;
+        regular expressions
+
+    * Example:
+        perl anylise_arguments.pl 1 2 1 23 345 hello one 34 3 456 90011uu 23 lanana
+
+        @odd =  (1,1,23,3, 23);
+        @even = (2,34,456);
+        @banana_candidate = ('lanana');
+        @other = qw(hello one 90011uu);
+        %count_hash = (
+            '1'       => 2,
+            '23'      => 2,
+            '3'       => 1,
+            '23'      => 1,
+            '2'       => 1,
+            '34'      => 1,
+            '456'     => 1,
+            'hello'   => 1,
+            'one'     => 1,
+            '90011uu' => 1,
+            'lanana'  => 1,
+        );
+
+

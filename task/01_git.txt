@@ -1,0 +1,67 @@
+
+#
+#    Version Control
+#        We are currently using git exclusively for our version controlling
+#        Developers should use git for all commits
+#
+#           https://www.youtube.com/watch?v=1ffBJ4sVUb4
+# 
+#            docs/git-cheat-sheet.pdf
+#            http://gitimmersion.com
+#
+#            /servers/support/vm-site-scripts/dev/README
+#
+
+* Task - Get to know dev tools
+
+    ........  missing text, only available @NOS ..........
+
+
+   # Config 
+     git config --global apply.whitespace nowarn
+     git config --global user.name  $YOUR_NAME
+     git config --global user.email "your@email.com"
+     git config --global -l
+
+     ( vi ~/.gitconfig  )
+
+   # Setup project
+
+    mkdir proj_dir
+    cd proj_dir
+    git init
+    touch README
+    git status
+    git add .
+    git status
+    git commit
+    git status
+    git log
+
+  # Ignore some files
+    echo ".swp" >> .gitignore
+    echo ".nfs*" >> .gitignore
+    git add .gitignore
+
+  # Branching
+    git branch my_project
+    git checkout my_project
+
+    git branch
+
+    git log --graph --all
+
+  # Milestoning - can use tag for this
+
+    git tag v0.1a -m "reached first milestone"
+
+    git show v0.1a
+
+    touch aa bb
+    git add aa bb
+    git commit aa
+    git commit bb
+
+    git describe
+    # v0.1a-2-g9ccb47e  # ( 2 commits since tag! )
+

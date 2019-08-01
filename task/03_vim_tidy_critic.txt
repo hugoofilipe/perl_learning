@@ -1,0 +1,58 @@
+
+########################################################################
+# 1.1 - Real Basic Stuff - using perlcritic and perltidy
+
+    Read 
+
+        docs/pbp_regras.pdf
+        docs/Pd_CodeStyleBook.pdf
+        docs/vimrc_example
+
+# NOTE: It is NOT mandatory to use these shortcuts.
+# They are sugestions, base on experience
+
+    * setup vim .vimrc in your home
+      .vimrc
+            lots of stuff: docs/vimrc_example
+                most used:
+                    tt      (add ticks to a bareword)
+                    _pc      (perlcritic)
+                    _t       (perltidy (also in visual mode) )
+                    _x       (xml tidy)
+                    ,,       (set paste)
+                    ,.       (set no paste)
+
+            logger: /servers/libs/novis/Sonaecom/Logger/examples/vimrc
+                    log[dwei] (exapand to logger)
+                        logd    (debug logger)
+                        logdd   (debug logger with Dumper)
+                        logds   (debug logger, simple)
+
+    * Suggestion:
+        During the first 2 weeks, EVERY morning read:
+            * docs/Pd_CodeStyleBook.pdf
+            * docs/pbp_regras.pdf
+
+        As your perl  knowledge  grows,  you  will  start  understanding
+        better the reason for each rule.
+
+
+# for emacs users
+
+    * mkdir ~/.emacs.d
+    * cp perltidy.el ~/.emacs.d
+    * add to ~/.emacs
+(require 'perltidy)
+(global-set-key "\C-cB" 'perltidy-buffer)
+(global-set-key "\C-cS" 'perltidy-subroutine)
+(global-set-key "\C-cR" 'perltidy-region)
+
+    * verify that you have ~/.perltidyrc
+    * restart emacs
+ 
+# There are 3 keybindings:
+    * Ctrl-c B    -> complete file
+    * Ctrl-c S    -> sub where cursor is placed
+    * Ctrl-c R    -> selected region
+
+

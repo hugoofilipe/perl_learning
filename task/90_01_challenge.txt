@@ -1,0 +1,9 @@
+
+    Step 1
+        Do the homework: https://github.com/maxmind/dev-hire-homework
+        Must be in Perl :)
+    Step 2
+        Use Mojolicious (http://mojolicious.org/) to create a simple site that allows:
+            - Allow indicating the log file to analyse
+            - Show results of the analysis
+

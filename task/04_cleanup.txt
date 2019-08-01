@@ -1,0 +1,19 @@
+
+########################################################################
+# Cleanup dirty code
+#
+    * vi code/dirty_code.pl
+    * run perltidy
+        ( _t )
+    * Check out changes!
+    * run perlcritic
+        * command line:
+            perlcritic11 code/dirty_code.pl   #(major output)
+        * vim code/dirty_code.pl
+        ( _pc
+          Ctrl w   # toggle between windows )
+        )
+    * Correct code (perlcritic status must be "OK")
+    * Code must run!  (perl code/dirty_code.pl)
+
+

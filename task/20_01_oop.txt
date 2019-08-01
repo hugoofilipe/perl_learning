@@ -1,0 +1,16 @@
+
+    * Use code written in previous tasks to finish  given  class
+      structure in code/lib/Sonaecom
+    * Adapt script to use objects
+
+    System:
+        .
+        ./code
+        ./code/lib
+        ./code/lib/Sonaecom
+        ./code/lib/Sonaecom/DSManager
+        ./code/lib/Sonaecom/DSManager/File
+        ./code/lib/Sonaecom/DSManager/File/Simple.pm    <---- change here
+        ./code/lib/Sonaecom/DSManager/File/CSV.pm       <---- change here
+        ./code/lib/Sonaecom/DSManager/File.pm
+        ./code/lib/Sonaecom/DSManager.pm

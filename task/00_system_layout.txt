@@ -1,0 +1,23 @@
+
+
+* README.nn
+    Global overview of task "nn"
+
+*.txt
+    Good stuff to read
+    Detailed instructions of task
+
+* see_readme.sh
+
+    Easy way to see all README files
+
+* system layout
+
+.
+|-- code        all code goes here
+|   -- lib      all libs go here
+|-- data        all input data goes here
+|-- docs        all helper documentation can be found here
+
+
+

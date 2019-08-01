@@ -1,0 +1,66 @@
+
+#
+
+** Step 1 **
+
+* Description of test system
+
+  As there is expected around 5000 delegates taking parte  in  the  Nato
+  Summit  in  Lisbon,  there  has  been  a  request   to   control   the
+  presentations, making sure that  there  were  no  double  bookings  of
+  rooms/talks
+
+  The information has been given as 3 CSV files with:
+      * Country President, Presentation Information
+      * Seminar Rooms Avaliable
+
+File1: Delegate Name,Country of Origin
+File2: Delegate Name, Presentation Title, Date Presentation, duration,room name
+File3: Room Id, Room Name, Capacity
+
+
+* Objectives
+
+    1.) Complete code/load_info.pl to fill in the tables with  the  data
+        from input files
+
+        Look out for corrupt data
+
+        If any corrupt data is given, the script should  report  it  and
+        undo all  previous  database  actions,  showing  the  line  with
+        corrupt data
+
+        HINT: The database used is sqlite and will be created in data/t2_1.sqlite
+              To access tha database:  sqlite3 data/t2_1.sqlite
+
+
+    2.) Using the data from the tables, list all talks by room name
+
+    3.) Show all rooms that:
+            have capacity greater than 60
+            and
+            have nothing to do with kryptonite (room name)
+            and
+            are free from 14h00 to 15h00 ( 20101118 )
+
+
+* Things to use:
+
+    Placeholders
+        $sth = $dbh->prepare( $statement );
+        $rv  = $sth->execute( @bind_values );
+
+    Transactions
+        $rc = $dbh->begin_work;
+        $rc = $dbh->commit;
+        $rc = $dbh->rollback;
+
+    Documentation:
+
+        perldoc DBI
+
+* NOTE
+
+    There is no correct/incorrect resolution.
+    The objective of this exercise is to use DBI methods
+
