@@ -112,22 +112,25 @@ sub _process_records {
     my $self  = shift;
     my $fd_in = shift;
     my %args  = @_;
-    my @recs_column;
+    my $flag  = 1;
     my @recs;
+    my @columns;
+    my @data;
 
     # Read/parse CSV
-    my $csv = Text::CSV_XS->new ({ binary => 1, auto_diag => 1 });
-    $csv->header ($fd_in, { set_column_names => 2 });
-    while (my $row = $csv->getline($fd_in)) {
-        push @recs, $row;
-        }
+    my $csv = Text::CSV_XS->new( { binary => 1, auto_diag => 1 } );
+    my $headers = $csv->getline( $fd_in );
 
+    $self->set_colnames( @{$headers} );
+    my $dump = $csv->column_names( @{ $self->{'col_names'} } );
+    while ( my $row = $csv->getline_hr( $fd_in ) ) {
+        push @recs, $row;
+    }
     return \@recs;
 }
 
 sub get_data_set_input_info {
     my $self = shift;
-
     return 'INPUT_TYPE: File::CVS';
 }
 

@@ -1,4 +1,4 @@
-"talk_id","delegate name","title","date_time","duration min","room"
+"talk_id","delegate_name","title","date_time","duration_min","room_id"
 "1","Peter Parker","Treating Spider Bites","20101118 10h00","60","1"
 "2","Bruce Banner","Anger Management","20101118 11h00","90","1"
 "3","Victor von Doom","Guide to World Domination","20101118 12h00","60","1"

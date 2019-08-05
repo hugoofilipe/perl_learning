@@ -16,7 +16,7 @@ sub connect_db {
     }
 
     my $con_str = "dbi:SQLite:dbname=$file_db";
-    my $dbh = DBI->connect( $con_str, q{}, q{}, { 'RaiseError' => 1 } );
+    my $dbh = DBI->connect( $con_str, q{}, q{}, { 'RaiseError' => 1 , 'AutoCommit'=>0} );
 
     if ( not $dbh ) {
         croak "unable to DBI connect: $!\n";
@@ -52,11 +52,11 @@ sub _init_db {
 
     $query = <<'END_HERE';
 CREATE TABLE presentations( talk_id INTEGER not NULL PRIMARY KEY,
-                            delegate_id INTEGER NOT NULL,
+                            delegate_name text NOT NULL,
                             room_id INTEGER NOT NULL,
-                            talk_title text NOT NULL,
+                            title text NOT NULL,
                             date_time text NOT NULL,
-                            duration INTEGER NOT NULL,
+                            duration_min INTEGER NOT NULL,
                             UNIQUE(talk_id))
  
 END_HERE
@@ -71,6 +71,20 @@ END_HERE
     return;
 }
 
+sub insert_into_database {
+    my ( $data, $dbh, $table ) = @_;
+    print 'table:' . $table;
+    my @columns = keys %$data;
+    my @values = values %$data;
+    my $fieldlist          = join ", ", @columns;
+    my $field_placeholders = join ", ", map {'?'} @columns;
+    my $insert_query       = qq{
+        INSERT INTO $table ( $fieldlist )
+         VALUES ( $field_placeholders )};
+    my $sth = $dbh->prepare( $insert_query );
+    $sth->execute(@values);
+}
+
 sub get_dataobject {
     my $filename         = shift;
     my $primary_key_name = shift;
@@ -81,12 +95,9 @@ sub get_dataobject {
         'key_name'            => $primary_key_name,
         'col_names_from_file' => 1,                   #csv specific
     );
-
     $data_object->set_input_file( $filename );
     $data_object->prepare_records( 'key_name' => $primary_key_name );
-
     return $data_object;
-
 }
 
 1;
