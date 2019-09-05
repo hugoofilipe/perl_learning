@@ -20,13 +20,24 @@ my @blacklist_for_request = (
 
 my @blacklist_for_path = ( ".rss", ".atom", );
 
-my $file = shift;
+my $file = "../access.medium.log";
+#my$file = "../access_shorted.log";
+
+#if(!$file ){
+#    print"Please write the file name by argument , like \"../access.log\"";
+#}else{
+#    print $file;
+#}
+
+my $visitor = Visitors->new();
+
 open my $in,  '<', $file;
 open my $out, '>', "$file.stripped";
 my $parser = Apache::Log::Parser->new( fast => 1 );
 
-my $visitor = Visitors->new();
-print Dumper($visitor);
+
+
+print "\n";
 
 NEXT: while ( <$in> ) {
     my $record = $parser->parse( $_ );
@@ -44,18 +55,21 @@ NEXT: while ( <$in> ) {
             next NEXT;
         }
     }
-    $record->{referer} = q{ - };
 
+    if (not exists $record->{path}){
+        next NEXT;
+    }
+
+    $record->{referer} = q{ - };
+    
     # There are some weird entries in the vegguide.org logs, apparently.
     next unless $record->{datetime};
     my $ip_address = $record->{rhost};
-    print 'City: '
-        . $visitor->get_city( $ip_address )
-        . '  --- Country: '
-        . $visitor->get_country( $ip_address )
-        . "  --  ip: "
-        . $ip_address . "\n";
-
+    my $path = $record->{path};
+    $visitor->get_city( $ip_address );
+    $visitor->get_country( $ip_address, $path);
+    
+    # print into file stripped
     print {$out} join q{ }, @{$record}{qw( rhost logname user )},
         _bracket( $record->{datetime} ),
         _quote( $record->{request} ), @{$record}{qw( status bytes )},
@@ -66,6 +80,13 @@ NEXT: while ( <$in> ) {
 
 close $out;
 
+
+#print list of cities
+#print $visitor->cities_list(), "\n";
+
+#print list of countries
+#print $visitor->countries_list();
+
 sub _bracket {
     return '[' . $_[0] . ']';
 }
@@ -73,3 +94,37 @@ sub _bracket {
 sub _quote {
     return q{"} . $_[0] . q{"};
 }
+
+
+sub get_html {
+    return q{
+        <form>
+  
+        <input name="field">
+        <input type="submit" value="Echo">
+        </form>
+        <hr>
+    }
+}
+
+#To run this just console: plackup
+use Plack::Request;
+
+my $app = sub {
+
+    my $env = shift;
+    my $html = get_html();
+    my $file = "../access_shorted.log";
+
+    my $request = Plack::Request->new($env);
+ 
+    # if ($request->param('field')) {
+    #     $html .= 'You said: ' . $request->param('field');
+    #     $file = $request->param('field');
+    # }
+    return [
+        '200',
+        [ 'Content-Type' => 'text/html' ],
+        [ $visitor->cities_list(), $visitor->countries_list(), $html, Dumper \$env ],
+    ];
+};
