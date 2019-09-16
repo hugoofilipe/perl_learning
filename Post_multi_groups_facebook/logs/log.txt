@@ -1,0 +1,276 @@
+Time: Tue Sep 10 11:46:21 2019
+Starting
+Time: Tue Sep 10 11:47:26 2019
+Starting
+Time: Tue Sep 10 11:47:43 2019
+Starting
+Time: Tue Sep 10 12:03:34 2019
+Starting
+Time: Tue Sep 10 14:02:02 2019
+Starting
+Time: Tue Sep 10 14:03:52 2019
+Starting
+Time: Tue Sep 10 14:05:41 2019
+Starting
+Time: Tue Sep 10 14:06:04 2019
+Starting
+Time: Tue Sep 10 14:07:06 2019
+Starting
+Time: Tue Sep 10 14:07:53 2019
+Starting
+Time: Tue Sep 10 14:08:00 2019
+Starting
+Time: Tue Sep 10 14:23:25 2019
+Starting
+Time: Tue Sep 10 14:34:54 2019
+Starting
+Time: Tue Sep 10 14:35:20 2019
+Starting
+Time: Tue Sep 10 14:35:35 2019
+Starting
+Time: Tue Sep 10 14:35:56 2019
+Starting
+Time: Tue Sep 10 14:36:01 2019
+Starting
+Time: Tue Sep 10 14:37:38 2019
+Starting
+Time: Tue Sep 10 14:42:48 2019
+Starting
+Time: Tue Sep 10 14:43:09 2019
+Starting
+Time: Tue Sep 10 14:43:27 2019
+Starting
+Time: Tue Sep 10 16:10:12 2019
+Starting
+Time: Tue Sep 10 16:10:27 2019
+Starting
+Time: Tue Sep 10 16:11:03 2019
+Starting
+Time: Tue Sep 10 16:13:41 2019
+Starting
+Time: Tue Sep 10 16:14:16 2019
+Starting
+Time: Tue Sep 10 16:15:55 2019
+Starting
+Time: Tue Sep 10 16:17:49 2019
+Starting
+Time: Tue Sep 10 16:18:01 2019
+Starting
+Time: Tue Sep 10 16:19:28 2019
+Starting
+Time: Tue Sep 10 16:19:42 2019
+Starting
+Time: Tue Sep 10 16:20:50 2019
+Starting
+Time: Tue Sep 10 16:21:04 2019
+Starting
+Time: Tue Sep 10 16:21:17 2019
+Starting
+Time: Tue Sep 10 16:23:51 2019
+Starting
+Time: Tue Sep 10 16:24:16 2019
+Starting
+Time: Tue Sep 10 16:24:26 2019
+Starting
+Time: Tue Sep 10 16:24:28 2019
+Starting
+Time: Tue Sep 10 16:25:35 2019
+Starting
+Time: Tue Sep 10 16:32:36 2019
+Starting
+Time: Tue Sep 10 16:33:52 2019
+Starting
+Time: Tue Sep 10 16:34:36 2019
+Starting
+Time: Tue Sep 10 16:34:48 2019
+Starting
+Time: Tue Sep 10 16:35:46 2019
+Starting
+Time: Tue Sep 10 16:37:26 2019
+Starting
+Time: Tue Sep 10 16:38:45 2019
+Starting
+Time: Tue Sep 10 16:39:03 2019
+Starting
+Time: Tue Sep 10 16:39:25 2019
+Starting
+Time: Tue Sep 10 16:43:32 2019
+Starting
+Time: Tue Sep 10 16:44:11 2019
+Starting
+Time: Tue Sep 10 16:44:42 2019
+Starting
+Time: Tue Sep 10 17:02:52 2019
+Starting
+Time: Tue Sep 10 17:06:28 2019
+Starting
+Time: Tue Sep 10 17:06:40 2019
+Starting
+Time: Tue Sep 10 17:07:24 2019
+Starting
+Time: Tue Sep 10 17:09:51 2019
+Starting
+Time: Tue Sep 10 17:10:13 2019
+Starting
+Time: Tue Sep 10 17:22:54 2019
+Starting
+Time: Tue Sep 10 17:23:07 2019
+Starting
+Time: Wed Sep 11 10:30:45 2019
+Starting
+Time: Wed Sep 11 10:31:24 2019
+Starting
+Time: Wed Sep 11 10:32:23 2019
+Starting
+Time: Wed Sep 11 10:44:07 2019
+Starting
+Time: Wed Sep 11 11:12:21 2019
+Starting
+Time: Wed Sep 11 11:12:52 2019
+Starting
+Time: Wed Sep 11 11:13:28 2019
+Starting
+Time: Wed Sep 11 11:13:33 2019
+Starting
+Time: Wed Sep 11 11:14:14 2019
+Starting
+Time: Wed Sep 11 11:15:51 2019
+Starting
+Time: Wed Sep 11 11:16:15 2019
+Starting
+Time: Wed Sep 11 11:17:23 2019
+Starting
+Time: Wed Sep 11 11:19:15 2019
+Starting
+Time: Wed Sep 11 11:21:01 2019
+Starting
+Time: Wed Sep 11 11:21:27 2019
+Starting
+Time: Wed Sep 11 11:23:07 2019
+Starting
+Time: Wed Sep 11 11:23:35 2019
+Starting
+Time: Wed Sep 11 11:23:46 2019
+Starting
+Time: Wed Sep 11 11:28:56 2019
+Starting
+Time: Wed Sep 11 11:29:03 2019
+Starting
+Time: Wed Sep 11 11:30:29 2019
+Starting
+Time: Wed Sep 11 11:32:06 2019
+Starting
+Time: Wed Sep 11 11:42:07 2019
+Starting
+Time: Wed Sep 11 14:23:05 2019
+Starting
+Time: Wed Sep 11 14:27:51 2019
+Starting
+Time: Wed Sep 11 14:28:03 2019
+Starting
+Time: Wed Sep 11 14:29:33 2019
+Starting
+Time: Wed Sep 11 14:29:48 2019
+Starting
+Time: Wed Sep 11 14:30:47 2019
+Starting
+Time: Wed Sep 11 14:31:38 2019
+Starting
+Time: Wed Sep 11 14:33:07 2019
+Starting
+Time: Wed Sep 11 14:34:52 2019
+Starting
+Time: Wed Sep 11 14:35:24 2019
+Starting
+Time: Wed Sep 11 14:39:50 2019
+Starting
+Time: Wed Sep 11 14:45:13 2019
+Starting
+Time: Fri Sep 13 14:20:12 2019
+Starting
+Time: Fri Sep 13 14:20:16 2019
+Starting
+Time: Fri Sep 13 14:20:30 2019
+Starting
+Time: Fri Sep 13 14:29:56 2019
+Starting
+Time: Fri Sep 13 14:30:31 2019
+Starting
+Time: Fri Sep 13 14:31:46 2019
+Starting
+Time: Fri Sep 13 14:40:31 2019
+Starting
+Time: Fri Sep 13 14:41:17 2019
+Starting
+Time: Fri Sep 13 14:44:58 2019
+Starting
+Time: Fri Sep 13 14:48:37 2019
+Starting
+Time: Fri Sep 13 14:48:38 2019
+Starting
+Time: Fri Sep 13 14:48:44 2019
+Starting
+Time: Fri Sep 13 14:51:57 2019
+Starting
+Time: Fri Sep 13 14:54:09 2019
+Starting
+Time: Fri Sep 13 14:54:41 2019
+Starting
+Time: Fri Sep 13 14:56:12 2019
+Starting
+Time: Fri Sep 13 14:56:30 2019
+Starting
+Time: Fri Sep 13 14:56:40 2019
+Starting
+Time: Fri Sep 13 15:01:35 2019
+Starting
+Time: Fri Sep 13 15:02:28 2019
+Starting
+Time: Fri Sep 13 15:04:55 2019
+Starting
+Time: Fri Sep 13 16:01:10 2019
+Starting
+Time: Fri Sep 13 16:04:17 2019
+Starting
+Time: Fri Sep 13 16:07:41 2019
+Starting
+Time: Fri Sep 13 16:10:23 2019
+Starting
+Time: Fri Sep 13 17:03:32 2019
+Starting
+Time: Fri Sep 13 17:03:34 2019
+Starting
+Time: Fri Sep 13 17:05:51 2019
+Starting
+Time: Fri Sep 13 17:06:19 2019
+Starting
+Time: Fri Sep 13 17:06:28 2019
+Starting
+Time: Fri Sep 13 17:07:58 2019
+Starting
+Time: Fri Sep 13 17:10:57 2019
+Starting
+Time: Fri Sep 13 17:11:18 2019
+Starting
+Time: Fri Sep 13 17:16:14 2019
+Starting
+Time: Fri Sep 13 17:28:06 2019
+Starting
+Time: Fri Sep 13 17:28:21 2019
+Starting
+Time: Fri Sep 13 17:28:33 2019
+Starting
+Time: Fri Sep 13 17:29:20 2019
+Starting
+Time: Fri Sep 13 17:31:05 2019
+Starting
+Time: Fri Sep 13 17:31:18 2019
+Starting
+Time: Fri Sep 13 17:31:56 2019
+Starting
+Time: Fri Sep 13 17:32:03 2019
+Starting
+Time: Fri Sep 13 17:32:08 2019
+Starting
+Time: Fri Sep 13 17:32:20 2019
+Starting

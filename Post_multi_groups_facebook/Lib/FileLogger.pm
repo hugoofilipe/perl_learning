@@ -1,12 +1,12 @@
-package FileLogger;
+package Lib::FileLogger;
 # FileLogger.pm
  
 use strict;
 use warnings;
  
 my $LEVEL = 1; # default log level
- 
-sub open{
+
+sub openLogger{
    my $logfile = shift;
    # open log file for appending
    open(LFH, '>>', $logfile) or die "cannot open the log file $logfile: $!";
@@ -20,7 +20,7 @@ sub log{
    # the module log level
    if($log_level <= $LEVEL){
       print LFH "$log_msg\n";
-   }
+   }  
 }
  
 sub close{

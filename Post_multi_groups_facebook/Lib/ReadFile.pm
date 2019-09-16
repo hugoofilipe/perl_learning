@@ -1,8 +1,8 @@
 #!usr/bin/perl
-package Post_multi_groups_facebook::Read_file;
+package Lib::ReadFile;
 
 sub get_urls {
-    my file_name = shift;
+    my $file_name = shift;
     if ( not defined $file_name ) {
         die "Need name of file \n";
     }
@@ -11,7 +11,7 @@ sub get_urls {
 }
 
 sub read_file {
-    my file_name = shift;
+    my $file_name = shift;
     open my $handle, '<', $file_name;
     chomp( my @lines = <$handle> );
     close $handle;
