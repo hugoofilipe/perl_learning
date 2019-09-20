@@ -1,5 +1,6 @@
 
 url_facebook: 'http://www.facebook.com'
+elem_id_login: 'u_0_2'
 log_file_path: 'logs/log.txt' 
 credencials:
   username: hugoofilipe@hotmail.com

@@ -274,3 +274,131 @@ Time: Fri Sep 13 17:32:08 2019
 Starting
 Time: Fri Sep 13 17:32:20 2019
 Starting
+Time: Mon Sep 16 12:43:58 2019
+Starting
+Time: Mon Sep 16 12:44:01 2019
+Starting
+Time: Mon Sep 16 13:58:06 2019
+Starting
+Time: Mon Sep 16 13:58:37 2019
+Starting
+Time: Mon Sep 16 13:59:22 2019
+Starting
+Time: Mon Sep 16 14:01:16 2019
+Starting
+Time: Mon Sep 16 14:04:08 2019
+Starting
+Time: Mon Sep 16 14:05:15 2019
+Starting
+Time: Mon Sep 16 14:20:59 2019
+Starting
+Time: Mon Sep 16 15:40:18 2019
+Starting
+Time: Mon Sep 16 15:42:19 2019
+Starting
+Time: Mon Sep 16 16:44:27 2019
+Starting
+Time: Mon Sep 16 16:49:30 2019
+Starting
+Time: Mon Sep 16 17:28:28 2019
+Starting
+Time: Mon Sep 16 17:39:31 2019
+Starting
+Time: Mon Sep 16 17:43:37 2019
+Starting
+Time: Mon Sep 16 17:57:17 2019
+Starting
+Time: Mon Sep 16 17:58:52 2019
+Starting
+Time: Mon Sep 16 18:04:09 2019
+Starting
+Time: Tue Sep 17 14:54:52 2019
+Starting
+Time: Tue Sep 17 14:58:51 2019
+Starting
+Time: Tue Sep 17 15:01:22 2019
+Starting
+Time: Tue Sep 17 15:09:36 2019
+Starting
+Time: Tue Sep 17 15:13:13 2019
+Starting
+Time: Tue Sep 17 15:25:00 2019
+Starting
+Time: Tue Sep 17 15:33:10 2019
+Starting
+Time: Tue Sep 17 15:41:58 2019
+Starting
+Time: Tue Sep 17 15:45:41 2019
+Starting
+Time: Tue Sep 17 15:51:39 2019
+Starting
+Time: Tue Sep 17 15:54:52 2019
+Starting
+Time: Tue Sep 17 16:01:57 2019
+Starting
+Time: Tue Sep 17 16:07:51 2019
+Starting
+Time: Tue Sep 17 16:15:51 2019
+Starting
+Time: Tue Sep 17 16:25:22 2019
+Starting
+Time: Tue Sep 17 16:25:49 2019
+Starting
+Time: Tue Sep 17 16:37:17 2019
+Starting
+Time: Tue Sep 17 16:43:07 2019
+Starting
+Time: Tue Sep 17 16:45:08 2019
+Starting
+Time: Tue Sep 17 16:47:16 2019
+Starting
+Time: Tue Sep 17 16:50:04 2019
+Starting
+Time: Tue Sep 17 16:52:23 2019
+Starting
+Time: Tue Sep 17 16:53:36 2019
+Starting
+Time: Tue Sep 17 16:55:50 2019
+Starting
+Time: Tue Sep 17 16:58:10 2019
+Starting
+Time: Wed Sep 18 13:21:06 2019
+Starting
+Time: Wed Sep 18 13:26:02 2019
+Starting
+Time: Wed Sep 18 13:28:28 2019
+Starting
+Time: Wed Sep 18 13:30:59 2019
+Starting
+Time: Wed Sep 18 17:09:40 2019
+Starting
+Time: Wed Sep 18 17:17:27 2019
+Starting
+Time: Wed Sep 18 17:24:01 2019
+Starting
+Time: Wed Sep 18 17:24:47 2019
+Starting
+Time: Wed Sep 18 17:25:12 2019
+Starting
+Time: Wed Sep 18 17:30:24 2019
+Starting
+Time: Wed Sep 18 17:30:56 2019
+Starting
+Time: Wed Sep 18 17:41:46 2019
+Starting
+Time: Wed Sep 18 17:42:15 2019
+Starting
+Time: Wed Sep 18 17:43:03 2019
+Starting
+Time: Wed Sep 18 17:43:32 2019
+Starting
+Time: Wed Sep 18 17:44:26 2019
+Starting
+Time: Wed Sep 18 17:44:58 2019
+Starting
+Time: Wed Sep 18 17:55:35 2019
+Starting
+Time: Wed Sep 18 17:56:42 2019
+Starting
+Time: Thu Sep 19 09:48:58 2019
+Starting

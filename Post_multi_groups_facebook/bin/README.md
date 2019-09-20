@@ -2,7 +2,10 @@ Objective: Interact with facebook
  - Perl Web Client to Interact with Dynamic Web Pages
  - Perl Client for the Selenium Remote Control test tool
 
-technologic:
+Notes:
+ - Facebook page code is all generated client-side. Scraping this without a JS engine is going to be hard.
+
+Technologic:
  - Perl
 
 Dependencies 
@@ -18,6 +21,3 @@ To run
 
 future
  - Docker images for Selenium Standalone Server Hub and Node configurations with Chrome and Firefox -> https://github.com/SeleniumHQ/docker-selenium
-
-Notes:
- - Facebook page code is all generated client-side. Scraping this without a JS engine is going to be hard.
